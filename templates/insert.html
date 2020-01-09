@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Insert</title>
+      <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body{
+            background-color: aqua;
+        }
+        h2{
+            font-size: 50px;
+            color: red;
+            font-family: bold;
+            border-radius: 40px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <form method="POST">
+                {% csrf_token %}
+                <h2 style="background-color: antiquewhite" align="center">Insert Data</h2>
+                <label>Enter Product ID</label>
+                <input type="number" name="pid" value="Product id" class="form-control" required>
+                <label>Enter Product name</label>
+                <input type="text" name="pname" class="form-control" required>
+                <label>Enter Product cost</label>
+                <input type="number" name="pcost" class="form-control" required>
+                <label>Enter Product Class</label>
+                <input type="text" name="pclass" class="form-control" value="high" readonly>
+                <label>Enter No of Products</label>
+                <input type="number" name="npro" class="form-control" required>
+                <label>Enter Manufacturing date</label>
+                <input type="date" name="mdate" class="form-control"  required>
+                <label>Enter Expiry date</label>
+                <input type="date" name="edate" class="form-control" required>
+                <label>Enter customer name</label>
+                <input type="text" name="cname" class="form-control" required>
+                <label>Enter Mobile no.</label>
+                <input type="number" name="mobile" class="form-control" required>
+                <label>Enter Email Id</label>
+                <input type="email" name="eid" class="form-control" required>
+               <center>
+                    <input type="submit" value="send" class="btn btn-success">
+                    <input type="reset" value="Clear" class="btn btn-danger"><br><br>
+                </center>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

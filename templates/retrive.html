@@ -1,0 +1,64 @@
+<html>
+<head>
+    <title>Retrived data</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <style>
+    body{
+            background-color: aqua;
+        }
+        h2{
+            font-size: 50px;
+            color: red;
+            font-family: bold Rage;
+            border-radius: 40px;
+        }
+</style>
+</head>
+<body>
+<div class="container">
+    <h2 align="center" >Product Details</h2>
+    {% if data %}
+        <table class="table"; border="3px" bgcolor="#ff7f50" ; >
+        <thead style="color: darkviolet">
+        <tr>
+            <td>product_id</td>
+            <td>product_name</td>
+            <td>product_cost</td>
+            <td>product_class</td>
+            <td>no_of_product</td>
+            <td>manufacture_date</td>
+            <td>expiry_date</td>
+            <td>customer_name</td>
+            <td>mobile</td>
+            <td>email</td>
+        </tr>
+        </thead>
+        <tbody>
+        {%for i in data %}
+            <tr>
+             <td>{{ i.product_id}}</td>
+            <td>{{i.product_name}}</td>
+            <td>{{i.product_cost}}</td>
+            <td>{{i.product_class}}</td>
+            <td>{{i.no_of_product}}</td>
+            <td>{{i.manufacture_date}}</td>
+            <td>{{i.expiry_date}}</td>
+            <td>{{i.customer_name}}</td>
+            <td>{{i.mobile}}</td>
+            <td>{{i.email}}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+        {% else %}
+        <h1>No data Available</h1>
+    {% endif %}
+<a href="/#/">Home</a>
+</div>
+</body>
+</html>
